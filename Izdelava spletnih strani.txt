@@ -251,3 +251,5 @@ monitoringom uptime
 API backendom
 
 Sporoči, če želiš razširjeno verzijo ali dejansko generirane datoteke!
+
+/to je 1. sprememba v datoteki, da vidimo kako deluje commit v git hubu/
