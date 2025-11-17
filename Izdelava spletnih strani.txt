@@ -1,0 +1,253 @@
+
+naredi mi načrt za projekt in ga opiši, korak po korak, dodaj dokumentacijo in primere, projekt:
+html spletna stran z "Hello world", pushanje sprememb na produkcijo, spletni ponudnik ki naj bo free - brezplačen, razvoj spletinih strani, DevOps, testi, CDRI (razloži CDRI), stran naj bo vedno dosegljiva
+
+ChatGPT said:
+
+Spodaj je celovit projektni načrt, zasnovan kot mini end-to-end projekt za razvoj, testiranje, avtomatizacijo (DevOps) in brezplačno produkcijsko gostovanje preproste HTML strani »Hello World«. Vključuje tudi primere datotek, CI/CD konfiguracijo, razlago CDRI, dokumentacijo in korake izvedbe.
+
+✅ PROJEKTNI NAČRT: “Hello World – Full DevOps Web Project”
+1. OPIS PROJEKTA
+
+Zgradili bomo preprosto HTML spletno stran Hello World, vzpostavili repozitorij (GitHub), dodali avtomatizirane teste, pripravili CI/CD pipeline ter brezplačno gostovali stran, tako da bo vedno dosegljiva.
+Za gostovanje bomo uporabili GitHub Pages (popolnoma brezplačno), ki omogoča enostaven deployment preko GitHub Actions.
+
+🧩 2. KORAKI PROJEKTA
+Korak 1: Inicializacija projekta
+
+Naredi projektno strukturo:
+
+hello-world-project/
+│
+├── src/
+│   └── index.html
+│
+├── tests/
+│   └── basic_test.sh
+│
+└── .github/
+    └── workflows/
+        └── deploy.yml
+
+Korak 2: Ustvari preprosto HTML stran
+
+Datoteka: src/index.html
+
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>Moja prva stran z DevOps pipeline-om.</p>
+</body>
+</html>
+
+Korak 3: Git repozitorij + GitHub
+
+Odpri terminal:
+
+git init
+git add .
+git commit -m "Initial commit"
+
+
+Ustvari GitHub repozitorij.
+
+Poveži lokalni repozitorij:
+
+git remote add origin https://github.com/<tvoje_ime>/hello-world-project.git
+git push -u origin main
+
+Korak 4: Dodaj testne skripte
+
+Minimalni funkcionalni testi – preverjanje, ali HTML datoteka obstaja in ni prazna.
+
+Datoteka: tests/basic_test.sh
+
+#!/bin/bash
+set -e
+
+if [ ! -f "src/index.html" ]; then
+  echo "Napaka: index.html ne obstaja!"
+  exit 1
+fi
+
+if [ ! -s "src/index.html" ]; then
+  echo "Napaka: index.html je prazen!"
+  exit 1
+fi
+
+echo "Testi uspešno opravljeni!"
+
+
+Naredi ga izvršljivega:
+
+chmod +x tests/basic_test.sh
+
+Korak 5: DevOps – CI/CD (GitHub Actions)
+
+Datoteka: .github/workflows/deploy.yml
+
+name: Deploy Hello World Website
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: |
+          bash tests/basic_test.sh
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./src
+
+
+Ta pipeline zagotavlja:
+
+✔ Testiranje ob vsakem pushu
+
+✔ Samodejni deployment na GitHub Pages
+
+✔ Vedno posodobljena in dostopna stran
+
+Korak 6: Aktivacija brezplačnega gostovanja – GitHub Pages
+
+Pojdi na: Settings → Pages
+
+Source:
+✔ Deploy from a branch
+✔ Branch: gh-pages
+
+Stran bo dosegljiva na:
+
+https://<tvoje_ime>.github.io/hello-world-project/
+
+Korak 7: Zagotavljanje 24/7 dosegljivosti
+
+GitHub Pages zagotavlja:
+
+globalni CDN
+
+uptime ~99.9%
+
+free certificirani HTTPS
+
+avtomatsko skaliranje
+
+Za dodatno zanesljivost lahko:
+
+uporabiš Cloudflare za DNS (prav tako free)
+
+dodaš uptime monitor (UptimeRobot – free)
+
+🧠 8. Razlaga CDRI
+
+CDRI = Continuous Delivery, Reliability & Improvement
+
+To je razširjen koncept DevOps-a, ki vključuje:
+
+✔ C – Continuous Delivery
+
+Koda se vedno lahko samodejno dostavi v produkcijo.
+
+✔ D – Delivery
+
+Deployment je hiter, ponovljiv in avtomatiziran (GitHub Actions).
+
+✔ R – Reliability
+
+Sistem je stabilen, preverjen s testi, spremljan, ima redundanco (npr. GitHub Pages + CDN).
+
+✔ I – Improvement
+
+Stalno izboljševanje:
+
+boljši testi
+
+optimizacija kode
+
+novi procesi
+
+spremljanje performans
+
+📄 9. DOKUMENTACIJA PROJEKTA
+Namen
+
+Zagotoviti delujočo HTML stran z avtomatiziranim procesom dostave (CI/CD) na brezplačen produkcijski strežnik.
+
+Uporabljena orodja
+
+Git – verzioniranje
+
+GitHub – repozitorij + CI/CD
+
+GitHub Pages – brezplačno gostovanje
+
+Bash – testi
+
+GitHub Actions – DevOps pipeline
+
+Tok dela
+
+Razvoj HTML v src/
+
+Dodajanje testov v tests/
+
+Push na GitHub
+
+GitHub Actions:
+
+zažene teste
+
+če uspejo → deploy
+
+GitHub Pages posodobi produkcijo
+
+📌 10. PRIMER: Tipičen razvojni cikel
+1. Uredi HTML:
+<h2>Novo besedilo</h2>
+
+2. Commit:
+git add .
+git commit -m "Dodana nova sekcija"
+git push
+
+3. GitHub Actions:
+
+testi → OK
+
+deployment → OK
+
+4. Čez nekaj sekund:
+
+Stran posodobljena ✔
+
+🎉 Zaključek
+
+S tem načrtom dobiš popoln, profesionalen mini DevOps projekt s CI/CD, testi, CDRI razlago in brezplačnim 24/7 gostovanjem. Če želiš, ga lahko razširimo z:
+
+JS frontendom
+
+Docker podporo
+
+samodejnim testiranjem HTML validacije
+
+monitoringom uptime
+
+API backendom
+
+Sporoči, če želiš razširjeno verzijo ali dejansko generirane datoteke!
