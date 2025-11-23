@@ -33,7 +33,7 @@ p {
     position: fixed;   /* fiksno na ekran, ostane med scrollanjem */
     bottom: 1px;      /* razdalja od spodnjega roba */
     right: 1px;       /* razdalja od desnega roba */
-    width: 250px;      /* prilagodi velikost slike */
+    width: 800px;      /* prilagodi velikost slike */
     height: auto;      /* ohranja razmerje slike */
     z-index: 100;     /* slika bo nad ostalo vsebino */
 }
