@@ -3,37 +3,37 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     color: #333333;
-    margin: 0;
-    padding: 0;
+    margin: 10;
+    padding: 1000;
 }
 
 header {
     background-color: #4CAF50;
     color: white;
-    padding: 2rem 1rem;
+    padding: 20rem 10rem;
     text-align: center;
 }
 
 h1 {
     font-size: 4rem; /* manjše in berljivo */
-    margin: 0;
+    margin: 30;
 }
 
 main {
-    padding: 1rem;
+    padding: 5rem;
 }
 
 p {
-    line-height: 1.6;
-    font-size: 1.2rem;
+    line-height: 13.6;
+    font-size: 3.2rem;
 }
 
 /* slika desno spodaj */
 .bottom-right {
     position: fixed;   /* fiksno na ekran, ostane med scrollanjem */
-    bottom: 1px;      /* razdalja od spodnjega roba */
-    right: 1px;       /* razdalja od desnega roba */
-    width: 800px;      /* prilagodi velikost slike */
+    bottom: 10px;      /* razdalja od spodnjega roba */
+    right: 10px;       /* razdalja od desnega roba */
+    width: 200px;      /* prilagodi velikost slike */
     height: auto;      /* ohranja razmerje slike */
-    z-index: 100;     /* slika bo nad ostalo vsebino */
+    z-index: 300;     /* slika bo nad ostalo vsebino */
 }
