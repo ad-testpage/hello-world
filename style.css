@@ -1,14 +1,14 @@
 /* style.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f0f0f03a;
     color: #333333;
     margin: 10;
     padding: 1000;
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #af634c;
     color: white;
     padding: 20rem 10rem;
     text-align: center;
@@ -33,7 +33,7 @@ p {
     position: fixed;   /* fiksno na ekran, ostane med scrollanjem */
     bottom: 10px;      /* razdalja od spodnjega roba */
     right: 10px;       /* razdalja od desnega roba */
-    width: 200px;      /* prilagodi velikost slike */
+    width: 2000px;      /* prilagodi velikost slike */
     height: auto;      /* ohranja razmerje slike */
-    z-index: 300;     /* slika bo nad ostalo vsebino */
+    z-index: 500;     /* slika bo nad ostalo vsebino */
 }
