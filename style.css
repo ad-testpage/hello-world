@@ -1,0 +1,39 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f03a;
+    color: #333333;
+    margin: 10;
+    padding: 1000;
+}
+
+header {
+    background-color: #af634c;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem; /* manjše in berljivo */
+    margin: 30;
+}
+
+main {
+    padding: 5rem;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+
+/* slika desno spodaj */
+.bottom-right {
+    position: fixed;   /* fiksno na ekran, ostane med scrollanjem */
+    bottom: 50px;      /* razdalja od spodnjega roba */
+    right: 1px;       /* razdalja od desnega roba */
+    width: 200px;      /* prilagodi velikost slike */
+    height: auto;      /* ohranja razmerje slike */
+    z-index: 5;     /* slika bo nad ostalo vsebino */
+}
