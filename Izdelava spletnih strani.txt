@@ -251,3 +251,10 @@ monitoringom uptime
 API backendom
 
 Sporoči, če želiš razširjeno verzijo ali dejansko generirane datoteke!
+
+HEAD
+preve spremembe narejene z vim
+=======
+/to je 1. sprememba v datoteki, da vidimo kako deluje commit v git hubu/
+6dd37c407968c8cec88f2d3d34717153d3117d8e
+
